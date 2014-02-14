@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Content="Fajny przycisk" HorizontalAlignment="Left" Margin="200,170,0,0" VerticalAlignment="Top" Width="151" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+        <Button Content="Fajny przycisk" HorizontalAlignment="Left" Margin="200,170,0,0" VerticalAlignment="Top" Width="151"/>
 
     </Grid>
 </Window>
