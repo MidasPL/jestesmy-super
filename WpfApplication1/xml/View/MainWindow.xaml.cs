@@ -12,17 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
-namespace WpfApplication1
+namespace xml
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
+         
             InitializeComponent();
+
+
         }
     }
 }
