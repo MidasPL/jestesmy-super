@@ -2,8 +2,5 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button Content="Fajny przycisk" HorizontalAlignment="Left" Margin="200,170,0,0" VerticalAlignment="Top" Width="151"/>
-
-    </Grid>
+    <Button Content="Fajny przycisk, nie zawsze" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="486" Height="280"/>
 </Window>
