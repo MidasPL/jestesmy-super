@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
-
+using xml.Model;
+using xml.Data;
+using xmlData.Model;
 namespace xml
 {
     /// <summary>
@@ -21,12 +23,21 @@ namespace xml
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-         
+            XML lista = new XML();
+            XmlData xml1 = new XmlData("C:\\XML_SANDBOX_1.xml");
+            XmlData xml2 = new XmlData("C:\\XML_SANDBOX_2.xml");
+            List<XmlData> troll = new List<XmlData>();
+            troll.Add(xml1);
+            troll.Add(xml2);
+            lista.XMLfiles = troll;
+            WrapUpXmltree heh = new WrapUpXmltree(lista);
             InitializeComponent();
+            XmlTrees.ItemsSource = heh.tree.tree;
 
-
+            
         }
     }
 }

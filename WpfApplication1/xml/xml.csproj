@@ -65,7 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\XML.cs" />
-    <Compile Include="Model\XmlData.cs" />
+    <Compile Include="Data\XmlData.cs" />
+    <Compile Include="Model\WrapUpXmltree.cs" />
+    <Compile Include="Model\xmlTree.cs" />
     <Compile Include="VievModel\MainWindow.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

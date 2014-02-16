@@ -7,9 +7,9 @@ using System.Xml.Linq;
 
 namespace xmlData.Model
 {
-    class XmlData
+    public class XmlData
     {
-       private XDocument xmlfile;
+       public XDocument xmlfile;
 
        public XmlData(string path)
         {
@@ -79,13 +79,13 @@ namespace xmlData.Model
         }
         public string getProcedureName(XElement Procedure)
         {
-            return Procedure.Element("Name").Value;
+            return Procedure.Element("ProcedureName").Value;
         }
         public XElement getURIProcedureOverrideVerdictActive(XElement Procedure) //get URI adress to procedure OverrideVerdict tag
         {
             return Procedure.Element("OverrideVerdictActive");
         }
-        public XElement getURITestCaseVerdict(XElement Procedure) //get URI adress to procedure OverrideInformation tag
+        public XElement getURITestProcedureVerdict(XElement Procedure) //get URI adress to procedure OverrideInformation tag
         {
             return Procedure.Element("Verdict");
         }
@@ -109,7 +109,7 @@ namespace xmlData.Model
         {
             return TestStep.Element("Result").Value;
         }
-        public XElement getURITestCaseVerdict(XElement TestStep) //get URI adress to TestStep Verdict tag
+        public XElement getURITestStepVerdict(XElement TestStep) //get URI adress to TestStep Verdict tag
         {
             return TestStep.Element("Verdict");
         }
