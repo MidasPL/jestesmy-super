@@ -23,25 +23,30 @@ namespace xml
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
 
-            InitializeComponent();
-         
+            InitializeComponent();       
+            
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog okienko = new Microsoft.Win32.OpenFileDialog();
+            // filtr tylko na .xml
+            if (okienko.ShowDialog() == true)
+            {
+                MessageBox.Show("Wybrano plik: " + okienko.FileName);
+            }
+            else
+                MessageBox.Show("Wybrano nieodpowiedni plik");
             XML lista = new XML();
-            XmlData xml1 = new XmlData("C:\\XML_SANDBOX_1.xml");
-            XmlData xml2 = new XmlData("C:\\XML_SANDBOX_2.xml");
+            XmlData xml1 = new XmlData(okienko.FileName);
             List<XmlData> troll = new List<XmlData>();
             troll.Add(xml1);
-            troll.Add(xml2);
             lista.XMLfiles = troll;
             WrapUpXmltree heh = new WrapUpXmltree(lista);
-           
-          
             XmlTrees.ItemsSource = heh.tree.tree;
-            
-            
         }
     }
 }

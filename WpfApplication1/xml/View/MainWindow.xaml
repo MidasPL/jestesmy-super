@@ -9,7 +9,7 @@
 
         <Menu IsMainMenu="True" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="Open file"></MenuItem>
+                <MenuItem Click="MenuItem_Click" Header="Open file"></MenuItem>
             </MenuItem>
         </Menu>
        <TreeView Name="XmlTrees" Margin="0,26,164,10" Visibility="Visible" FontSize="15" 
