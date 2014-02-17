@@ -26,6 +26,9 @@ namespace xml
 
         public MainWindow()
         {
+
+            InitializeComponent();
+            /*
             XML lista = new XML();
             XmlData xml1 = new XmlData("C:\\XML_SANDBOX_1.xml");
             XmlData xml2 = new XmlData("C:\\XML_SANDBOX_2.xml");
@@ -34,9 +37,8 @@ namespace xml
             troll.Add(xml2);
             lista.XMLfiles = troll;
             WrapUpXmltree heh = new WrapUpXmltree(lista);
-            InitializeComponent();
             XmlTrees.ItemsSource = heh.tree.tree;
-
+            */
             
         }
     }
