@@ -23,6 +23,8 @@ namespace xml
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<XmlData> troll = new List<XmlData>();
+            
         public MainWindow()
         {
 
@@ -33,16 +35,11 @@ namespace xml
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog okienko = new Microsoft.Win32.OpenFileDialog();
-            // filtr tylko na .xml
-            if (okienko.ShowDialog() == true)
-            {
-                MessageBox.Show("Wybrano plik: " + okienko.FileName);
-            }
-            else
-                MessageBox.Show("Wybrano nieodpowiedni plik");
+            okienko.Filter = "XML file|*.xml";
+            if (okienko.ShowDialog() == false)
+                return; // jesli nie zostal otwarty plik
             XML lista = new XML();
             XmlData xml1 = new XmlData(okienko.FileName);
-            List<XmlData> troll = new List<XmlData>();
             troll.Add(xml1);
             lista.XMLfiles = troll;
             WrapUpXmltree heh = new WrapUpXmltree(lista);
