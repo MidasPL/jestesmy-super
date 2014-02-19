@@ -12,9 +12,9 @@ using xml.Model;
 namespace xml.VievModel
 {
     class MainWindow
-    {
-        
-               
+    {    
+            
 
     }
+
 }

@@ -10,6 +10,8 @@ namespace xml.Data
     public class XML
     {
         public List<XmlData> XMLfiles { get; set; }
+
+       
     
     }
 }

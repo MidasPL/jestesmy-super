@@ -9,7 +9,8 @@ namespace xmlData.Model
 {
     public class XmlData
     {
-       public XDocument xmlfile;
+        public XDocument xmlfile { get; set; }
+       public string path { get; set; }
 
        public XmlData(string path)
         {
@@ -112,6 +113,11 @@ namespace xmlData.Model
         public XElement getURITestStepVerdict(XElement TestStep) //get URI adress to TestStep Verdict tag
         {
             return TestStep.Element("Verdict");
+        }
+
+        public void save()
+        {
+            this.xmlfile.Save(this.path,SaveOptions.None);
         }
     }
 }
