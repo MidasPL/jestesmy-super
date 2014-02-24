@@ -11,7 +11,13 @@ namespace xml.Data
     {
         public List<XmlData> XMLfiles { get; set; }
 
-       
+       public void save()
+       {
+           foreach(var element in this.XMLfiles)
+           {
+               element.xmlfile.Save(element.path);
+           }
+       }
     
     }
 }

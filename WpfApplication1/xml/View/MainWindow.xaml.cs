@@ -25,9 +25,9 @@ namespace xml
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<XmlData> troll = new List<XmlData>();
+        public List<XmlData> troll = new List<XmlData>();
         public xmlTree actualItem { get; set; }
-        
+        public XML lista = new XML();
 
         public MainWindow()
         {
@@ -43,7 +43,7 @@ namespace xml
             okienko.Multiselect = true;
             if (okienko.ShowDialog() == false)
                 return; // jesli nie zostal otwarty plik
-            XML lista = new XML();
+            
             foreach (string file in okienko.FileNames)
             {
                 XmlData xml1 = new XmlData(file);
@@ -54,11 +54,18 @@ namespace xml
             WrapUpXmltree heh = new WrapUpXmltree(lista);
             XmlTrees.ItemsSource = heh.tree.tree;
         }
-
+         private void Save(object sender, RoutedEventArgs e)
+        {
+             if (this.lista.XMLfiles != null)
+             {
+                 this.lista.save();
+             }
+        }
 
         private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             xmlTree dd = e.NewValue as xmlTree;
+                               
             this.actualItem = dd;
             if(dd.URIVerdict != null)
             {
@@ -78,9 +85,19 @@ namespace xml
 
           
         }
-        private void verdictchange(object sender, SelectionChangedEventArgs e)
+        private void verdictchange(object sender, EventArgs e)
         {
-            object d = e;
+            if(this.actualItem.URIVerdict.Value != procedurebox.Text)
+            {
+                this.actualItem.URIVerdict.Value = procedurebox.Text;
+                if (this.actualItem.URIVerdictOveride != null)
+                {
+                    this.actualItem.URIVerdictOveride.Value = "true";
+                }
+               
+            }
+            
+                        
         }
 
     }

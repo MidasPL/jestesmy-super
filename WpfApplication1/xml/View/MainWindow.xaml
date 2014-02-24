@@ -10,6 +10,7 @@
         <Menu IsMainMenu="True" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem Header="_File">
                 <MenuItem Click="MenuItem_Click" Header="Open file"/>
+                <MenuItem Click="Save" Header="Save"/>
             </MenuItem>
         </Menu>
         <TreeView Name="XmlTrees" Margin="0,26,592,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" >
@@ -43,7 +44,7 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <ComboBox x:Name="procedurebox" HorizontalAlignment="Left" Margin="860,26,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.55,0.455" SelectionChanged="verdictchange">
+        <ComboBox x:Name="procedurebox" HorizontalAlignment="Left" Margin="860,26,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.55,0.455" DropDownClosed="verdictchange">
             <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
             <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
             <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
