@@ -30,21 +30,21 @@
                 <Table x:Name="myTable"/>
             </FlowDocument>
         </FlowDocumentScrollViewer>
-        <RichTextBox x:Name="procedure" HorizontalAlignment="Left" Height="22" Margin="403,26,0,0" VerticalAlignment="Top" Width="290" IsReadOnly="True">
+        <RichTextBox x:Name="procedure" Height="22" Margin="398,26,302,0" VerticalAlignment="Top" Width="290" IsReadOnly="True" HorizontalAlignment="Right">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <RichTextBox x:Name="ID" HorizontalAlignment="Left" Height="22" Margin="698,26,0,0" VerticalAlignment="Top" Width="157" IsReadOnly="True">
+        <RichTextBox x:Name="ID" Height="22" Margin="693,26,140,0" VerticalAlignment="Top" Width="157" IsReadOnly="True" HorizontalAlignment="Right">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <ComboBox x:Name="procedurebox" HorizontalAlignment="Left" Margin="860,26,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.55,0.455" DropDownClosed="verdictchange">
+        <ComboBox x:Name="procedurebox" Margin="860,26,10,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.55,0.455" DropDownClosed="verdictchange" HorizontalAlignment="Right">
             <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
             <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
             <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
