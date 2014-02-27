@@ -20,6 +20,7 @@ namespace xml.VievModel
         public string ID { get; set; }
         public ObservableCollection<procedure> procedures { get; set; }
         public XElement VerdictUri { get; set; }
+        public IEnumerable<string> Ver { get; set; }
         public XElement OverUri { get; set; }
         public XElement ComenntUri { get; set; }
 

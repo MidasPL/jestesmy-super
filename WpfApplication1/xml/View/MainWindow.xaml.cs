@@ -76,36 +76,39 @@ namespace xml
                 ObservableCollection<dataTestCase> hr = new ObservableCollection<dataTestCase>();
                 hr.Add(this.datagridData);
                 Infos.ItemsSource = hr;
-                object cc = Infos;
-                object ss = Infos;
-
+                Procedures.ItemsSource = hr[0].procedures;
+                Steps.IsEnabled = false;
+                Steps.ItemsSource = null;
+                
             }
             
             
 
           
         }
-     /*  private void verdictchange(object sender, EventArgs e)
+       private void verdictchange(object sender, EventArgs e)
         {
-            if(this.actualItem.URIVerdict.Value != procedurebox.Text)
-            {
-                this.actualItem.URIVerdict.Value = procedurebox.Text;
-                if (this.actualItem.URIVerdictOveride != null)
-                {
-                    this.actualItem.URIVerdictOveride.Value = "true";
-                }
-               
-            }
-         
+            ComboBox ff = sender as ComboBox;
+            ff.Text = "Failed";
                         
         }
       
-       */
+      
 
 
-        private void Infos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ProcedureChanged(object sender, EventArgs e)
         {
-            object cc = e;
+
+            DataGrid ff = sender as DataGrid;
+            procedure jj = ff.CurrentCell.Item as procedure;
+
+            if (jj != null)
+            {
+                Steps.IsEnabled = true;
+                Steps.ItemsSource = jj.steps;
+            }
+            
+           
         }
 
     }
