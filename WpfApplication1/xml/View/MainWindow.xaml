@@ -5,7 +5,7 @@
         xmlns:data="clr-namespace:xml"
         Title="MainWindow" Height="656" Width="923.561">
 
-    <Grid Margin="0,0,2,-10">
+    <Grid Margin="0,0,-8,-10">
 
         <Menu IsMainMenu="True" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem Header="_File">
@@ -13,7 +13,7 @@
                 <MenuItem Click="Save" Header="Save"/>
             </MenuItem>
         </Menu>
-        <TreeView Name="XmlTrees" Margin="0,26,611.831,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" >
+        <TreeView Name="XmlTrees" Margin="0,26,0,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" HorizontalAlignment="Left" Width="302" >
 
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type self:xmlTree}" ItemsSource="{Binding tree, Mode=TwoWay}">
@@ -24,7 +24,7 @@
 
         </TreeView>
 
-        <DataGrid x:Name="Infos" HorizontalAlignment="Right" Margin="0,26,10,0" RenderTransformOrigin="-13.833,-4.923" Width="597" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" SelectionChanged="Infos_SelectionChanged" VerticalAlignment="Top" Height="69" >
+        <DataGrid x:Name="Infos" Margin="312,26,22.463,529" RenderTransformOrigin="-13.833,-4.923" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" HorizontalAlignment="Stretch" SelectionChanged="Infos_SelectionChanged" HorizontalScrollBarVisibility="Disabled" UseLayoutRounding="False" ScrollViewer.CanContentScroll="False" HorizontalContentAlignment="Stretch" >
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
@@ -69,7 +69,7 @@
                 <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ComboBox x:Name="procedurebox" Margin="0,26,10,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.55,0.455"  HorizontalAlignment="Right">
+                            <ComboBox x:Name="procedurebox" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.55,0.455"  HorizontalAlignment="Right">
                                 <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
                                 <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
                                 <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
