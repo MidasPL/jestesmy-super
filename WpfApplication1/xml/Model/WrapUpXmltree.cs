@@ -23,7 +23,7 @@ namespace xml.Model
                 xmlTree TestSuite = new xmlTree() { Title = file.getTestSuiteName() };
                 foreach(var TestCases in file.getTestCases())
                 {
-                    xmlTree TestCase = new xmlTree() { Title = file.getTestCaseName(TestCases), Req = file.getTestCaseReq(TestCases), URIVerdict = file.getURITestCaseVerdict(TestCases), Date = file.getTestCaseDate(TestCases), Tester = file.getTestCaseTester(TestCases), URIComment = file.getURITestCaseComment(TestCases),URIVerdictOveride = file.getURITestCaseOverrideVerdictActive(TestCases) };
+                    xmlTree TestCase = new xmlTree() { Title = file.getTestCaseName(TestCases), Req = file.getTestCaseReq(TestCases), URIVerdict = file.getURITestCaseVerdict(TestCases), Date = file.getTestCaseDate(TestCases), Tester = file.getTestCaseTester(TestCases), URIComment = file.getURITestCaseComment(TestCases), URIVerdictOveride = file.getURITestCaseOverrideVerdictActive(TestCases), ID = file.getTestCaseID(TestCases) };
                     foreach(var Procedure in file.getTestProcedures(TestCases))
                     {
                         xmlTree Proc = new xmlTree() { Title = file.getProcedureName(Procedure), URIVerdictOveride = file.getURIProcedureOverrideVerdictActive(Procedure), URIVerdict = file.getURITestProcedureVerdict(Procedure) };

@@ -53,6 +53,10 @@ namespace xmlData.Model
             }
             return result;
         }
+        public string getTestCaseID(XElement ATC)
+        {
+            return ATC.Element("OriginalTest").Value;
+        }
         public string getTestCaseDate(XElement ATC)
         {
             return ATC.Element("ExecutionDate").Value;

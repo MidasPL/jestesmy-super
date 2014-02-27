@@ -19,6 +19,7 @@ namespace xml.Model
         public string Action { get; set; }
         public string ExResult { get; set; }
         public string AcResult { get; set; }
+        public string ID { get; set; }
         public string Num { get; set; }
         public string Date { get; set; }
         public ObservableCollection<xmlTree> tree { get; set; }

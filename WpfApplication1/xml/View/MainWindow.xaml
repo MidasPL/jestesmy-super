@@ -23,33 +23,89 @@
 
 
         </TreeView>
-        <FlowDocumentScrollViewer
-      VerticalScrollBarVisibility="Auto"
-      HorizontalScrollBarVisibility="Auto" Margin="403,66,15,52">
-            <FlowDocument>
-                <Table x:Name="myTable"/>
-            </FlowDocument>
-        </FlowDocumentScrollViewer>
-        <RichTextBox x:Name="procedure" HorizontalAlignment="Left" Height="22" Margin="403,26,0,0" VerticalAlignment="Top" Width="290" IsReadOnly="True">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="" />
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <RichTextBox x:Name="ID" HorizontalAlignment="Left" Height="22" Margin="698,26,0,0" VerticalAlignment="Top" Width="157" IsReadOnly="True">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="" />
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <ComboBox x:Name="procedurebox" HorizontalAlignment="Left" Margin="860,26,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.55,0.455" DropDownClosed="verdictchange">
-            <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-            <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-            <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-            <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-        </ComboBox>
+
+        <DataGrid x:Name="Infos" HorizontalAlignment="Left" Margin="403,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="80" Width="577" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" SelectionChanged="Infos_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>                    
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="Requirements" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding req}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Date" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding date}"  IsReadOnly="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Tester" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding tester}"  IsReadOnly="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="ID" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ID}" IsReadOnly="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox x:Name="procedurebox" Margin="0,26,10,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.55,0.455"  HorizontalAlignment="Right">
+                                <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+                                <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+                                <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+                                <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+                            </ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Comment" Width="SizeToCells">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ComenntUri.Value}" IsReadOnly="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding OverUri.Value}" IsReadOnly="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+
+
+
+
 
     </Grid>
 

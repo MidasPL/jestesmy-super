@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 using xml.Model;
+using xml.VievModel;
 using xml.Data;
 using xmlData.Model;
 using System.Collections.ObjectModel;
@@ -28,6 +29,7 @@ namespace xml
         public List<XmlData> troll = new List<XmlData>();
         public xmlTree actualItem { get; set; }
         public XML lista = new XML();
+        public dataTestCase datagridData;
 
         public MainWindow()
         {
@@ -67,25 +69,23 @@ namespace xml
             xmlTree dd = e.NewValue as xmlTree;
                                
             this.actualItem = dd;
-            if(dd.URIVerdict != null)
+            if(dd.Req != null)
             {
-                procedurebox.Text = dd.URIVerdict.Value;
-                procedurebox.Visibility = System.Windows.Visibility.Visible;
-                new TextRange(procedure.Document.ContentStart, procedure.Document.ContentEnd).Text = dd.Title;
-                new TextRange(ID.Document.ContentStart, ID.Document.ContentEnd).Text = "";
+                this.datagridData = new dataTestCase(this.actualItem);
+
+                ObservableCollection<dataTestCase> hr = new ObservableCollection<dataTestCase>();
+                hr.Add(this.datagridData);
+                Infos.ItemsSource = hr;
+                object cc = Infos;
+                object ss = Infos;
+
             }
-            else
-            {
-                procedurebox.Visibility = System.Windows.Visibility.Hidden;
-                new TextRange(procedure.Document.ContentStart, procedure.Document.ContentEnd).Text = "";
-                new TextRange(ID.Document.ContentStart, ID.Document.ContentEnd).Text = "";
-            }
-                
+            
             
 
           
         }
-        private void verdictchange(object sender, EventArgs e)
+     /*  private void verdictchange(object sender, EventArgs e)
         {
             if(this.actualItem.URIVerdict.Value != procedurebox.Text)
             {
@@ -96,8 +96,16 @@ namespace xml
                 }
                
             }
-            
+         
                         
+        }
+      
+       */
+
+
+        private void Infos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object cc = e;
         }
 
     }
