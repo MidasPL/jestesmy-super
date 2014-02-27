@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:self="clr-namespace:xml.Model"
         xmlns:data="clr-namespace:xml"
-        Title="MainWindow" Height="656" Width="1000">
+        Title="MainWindow" Height="656" Width="923.561">
 
     <Grid Margin="0,0,2,-10">
 
@@ -13,7 +13,7 @@
                 <MenuItem Click="Save" Header="Save"/>
             </MenuItem>
         </Menu>
-        <TreeView Name="XmlTrees" Margin="0,26,592,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" >
+        <TreeView Name="XmlTrees" Margin="0,26,611.831,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" >
 
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type self:xmlTree}" ItemsSource="{Binding tree, Mode=TwoWay}">
@@ -70,11 +70,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="procedurebox" Margin="0,26,10,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.55,0.455"  HorizontalAlignment="Right">
-                                <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-                                <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-                                <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-                                <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-                            </ComboBox>
+            <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+            <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+            <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+            <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+        </ComboBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
