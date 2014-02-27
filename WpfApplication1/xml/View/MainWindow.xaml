@@ -24,9 +24,9 @@
 
         </TreeView>
 
-        <DataGrid x:Name="Infos" Margin="312,26,22.463,529" RenderTransformOrigin="-13.833,-4.923" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" HorizontalAlignment="Stretch" SelectionChanged="Infos_SelectionChanged" HorizontalScrollBarVisibility="Disabled" UseLayoutRounding="False" ScrollViewer.CanContentScroll="False" HorizontalContentAlignment="Stretch" >
+        <DataGrid x:Name="Infos" Margin="312,26,22.463,551.388" RenderTransformOrigin="-13.833,-4.923" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" HorizontalAlignment="Stretch" SelectionChanged="Infos_SelectionChanged" HorizontalScrollBarVisibility="Disabled" UseLayoutRounding="False" ScrollViewer.CanContentScroll="False" HeadersVisibility="Column" VerticalScrollBarVisibility="Disabled" >
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True" MinWidth="33">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Title}" />
@@ -34,7 +34,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Requirements" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Requirements" Width="SizeToCells" IsReadOnly="True" MinWidth="83">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding req}" />
@@ -42,7 +42,7 @@
                     </DataGridTemplateColumn.CellTemplate>
 
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Date" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Date" Width="SizeToCells" IsReadOnly="True" MinWidth="36">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding date}"  IsReadOnly="True" />
@@ -50,7 +50,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Tester" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Tester" Width="SizeToCells" IsReadOnly="True" MinWidth="42">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding tester}"  IsReadOnly="True" />
@@ -58,7 +58,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="ID" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="ID" Width="SizeToCells" IsReadOnly="True" MinWidth="21">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding ID}" IsReadOnly="True" />
@@ -66,7 +66,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True" MinWidth="47">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="procedurebox" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.55,0.455"  HorizontalAlignment="Right">
@@ -79,7 +79,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Comment" Width="SizeToCells">
+                <DataGridTemplateColumn Header="Comment" Width="SizeToCells" MinWidth="62">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding ComenntUri.Value}" IsReadOnly="True"/>
@@ -87,7 +87,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True" MinWidth="51">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding OverUri.Value}" IsReadOnly="True" />
