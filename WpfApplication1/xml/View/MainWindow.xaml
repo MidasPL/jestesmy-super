@@ -13,7 +13,7 @@
                 <MenuItem Click="Save" Header="Save"/>
             </MenuItem>
         </Menu>
-        <TreeView Name="XmlTrees" Margin="0,26,0,42" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" HorizontalAlignment="Left" Width="302" >
+        <TreeView Name="XmlTrees" Margin="0,26,0,23" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" HorizontalAlignment="Left" Width="302" >
 
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type self:xmlTree}" ItemsSource="{Binding tree, Mode=TwoWay}">
@@ -24,23 +24,23 @@
 
         </TreeView>
 
-        <DataGrid x:Name="Infos" HorizontalAlignment="Left" Margin="307,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="80" Width="597" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" SelectionMode="Single">
+        <DataGrid x:Name="Infos" Margin="307,26,33,0" RenderTransformOrigin="-13.833,-4.923" ItemsSource="{Binding dataTestCase}" AutoGenerateColumns="False" SelectionMode="Single" VerticalAlignment="Top" Height="74">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True" MinWidth="33">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding Title}" IsReadOnly="True" />
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>                    
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
                 <DataGridTemplateColumn Header="Requirements" Width="SizeToCells" IsReadOnly="True" MinWidth="83">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding req}" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                    
+
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Date" Width="SizeToCells" IsReadOnly="True" MinWidth="36">
                     <DataGridTemplateColumn.CellTemplate>
@@ -57,7 +57,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
                 <DataGridTemplateColumn Header="ID" Width="SizeToCells" IsReadOnly="True" MinWidth="21">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -65,16 +65,16 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
                 <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True" MinWidth="47">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeTestCase" Text="{Binding VerdictUri.Value}">
-            <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-            <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-            <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-            <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
-        </ComboBox>
+                                <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+                                <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+                                <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+                                <ComboBoxItem Background="#FF7C6E6E" Content="NotApplicable" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
+                            </ComboBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -100,7 +100,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid x:Name="Procedures" HorizontalAlignment="Left" Margin="307,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="308" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="ProcedureChanged" SelectionMode="Single" SelectionUnit="FullRow">
+        <DataGrid x:Name="Procedures" Margin="307,105,33,0" RenderTransformOrigin="-13.833,-4.923" Height="357" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="ProcedureChanged" SelectionMode="Single" SelectionUnit="FullRow" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True" MinWidth="32">
                     <DataGridTemplateColumn.CellTemplate>
@@ -139,7 +139,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid x:Name="Steps" HorizontalAlignment="Left" Margin="307,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="170" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="StepChanged" IsEnabled="False" SelectionMode="Single">
+        <DataGrid x:Name="Steps" Margin="307,467,33,23" RenderTransformOrigin="-13.833,-4.923" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="StepChanged" IsEnabled="False" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Number" Width="SizeToCells" IsReadOnly="True" MinWidth="53">
                     <DataGridTemplateColumn.CellTemplate>
