@@ -86,8 +86,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
-                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True">
+
+                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True" MinWidth="52">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding OverUri.Value}" IsReadOnly="True" />
@@ -102,7 +102,7 @@
         </DataGrid>
         <DataGrid x:Name="Procedures" HorizontalAlignment="Left" Margin="307,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="308" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="ProcedureChanged" SelectionMode="Single" SelectionUnit="FullRow">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True" MinWidth="32">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding Title}" IsReadOnly="True"/>
@@ -112,7 +112,7 @@
 
 
 
-                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True" MinWidth="47">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeProcedure" Text="{Binding VerdictUri.Value}">
@@ -126,7 +126,7 @@
                 </DataGridTemplateColumn>
 
 
-                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Overide" Width="SizeToCells" IsReadOnly="True" MinWidth="52">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding OverUri.Value}" IsReadOnly="True" />
@@ -141,28 +141,28 @@
         </DataGrid>
         <DataGrid x:Name="Steps" HorizontalAlignment="Left" Margin="307,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="170" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="StepChanged" IsEnabled="False" SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Number" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Number" Width="SizeToCells" IsReadOnly="True" MinWidth="53">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding num}" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Action" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Action" Width="SizeToCells" IsReadOnly="True" MinWidth="45">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding Action}" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Expected Result" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Expected Result" Width="SizeToCells" IsReadOnly="True" MinWidth="93">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding ExRes}" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Actual Result" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Actual Result" Width="SizeToCells" IsReadOnly="True" MinWidth="78">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Text="{Binding ACRes}" IsReadOnly="True"/>
@@ -173,7 +173,7 @@
 
 
 
-                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
+                <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True" MinWidth="47">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeStep" Text="{Binding VerdictUri.Value}">
