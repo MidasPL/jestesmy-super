@@ -18,6 +18,8 @@ using xml.VievModel;
 using xml.Data;
 using xmlData.Model;
 using System.Collections.ObjectModel;
+using xml;
+using xml.View;
 
 namespace xml
 {
@@ -30,6 +32,8 @@ namespace xml
         public xmlTree actualItem { get; set; }
         public XML lista = new XML();
         public dataTestCase datagridData;
+        public procedure actualPro { get; set; }
+        public step actualStep { get; set; }
 
         public MainWindow()
         {
@@ -72,7 +76,7 @@ namespace xml
             if(dd.Req != null)
             {
                 this.datagridData = new dataTestCase(this.actualItem);
-
+                this.actualPro = null;
                 ObservableCollection<dataTestCase> hr = new ObservableCollection<dataTestCase>();
                 hr.Add(this.datagridData);
                 Infos.ItemsSource = hr;
@@ -86,12 +90,31 @@ namespace xml
 
           
         }
-       private void verdictchange(object sender, EventArgs e)
+       private void verdictchangeTestCase(object sender, EventArgs e)
         {
             ComboBox ff = sender as ComboBox;
-            ff.Text = "Failed";
+            this.actualItem.URIVerdict.Value = ff.Text; 
+            this.actualItem.URIVerdictOveride.Value = "true";
+            InsertComment com = new InsertComment(this.actualItem.URIComment);
+            com.Show();
+            
                         
         }
+       private void verdictchangeProcedure(object sender, EventArgs e)
+       {
+           ComboBox ff = sender as ComboBox;
+           this.actualPro.VerdictUri.Value = ff.Text;
+           this.actualPro.OverUri.Value = "true";
+           InsertComment com = new InsertComment(this.actualItem.URIComment);
+           com.Show();
+       }
+       private void verdictchangeStep(object sender, EventArgs e)
+       {
+           ComboBox ff = sender as ComboBox;
+           this.actualStep.VerdictUri.Value = ff.Text;
+           InsertComment com = new InsertComment(this.actualItem.URIComment);
+           com.Show();
+       }
       
       
 
@@ -104,6 +127,8 @@ namespace xml
 
             if (jj != null)
             {
+                this.actualPro = jj;
+                this.actualStep = null;
                 Steps.IsEnabled = true;
                 Steps.ItemsSource = jj.steps;
             }
@@ -111,6 +136,17 @@ namespace xml
            
         }
 
+        private void StepChanged(object sender, EventArgs e)
+        {
+            DataGrid ff = sender as DataGrid;
+            step jj = ff.CurrentCell.Item as step;
+            if (jj != null)
+            {
+                this.actualStep= jj;
+            }
+            
+        }
+       
     }
 
 }

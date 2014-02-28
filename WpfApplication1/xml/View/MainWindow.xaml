@@ -29,7 +29,7 @@
                 <DataGridTemplateColumn Header="Title" Width="SizeToCells" IsReadOnly="True" MinWidth="33">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Title}" />
+                            <TextBox Text="{Binding Title}" IsReadOnly="True" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>                    
                 </DataGridTemplateColumn>
@@ -37,7 +37,7 @@
                 <DataGridTemplateColumn Header="Requirements" Width="SizeToCells" IsReadOnly="True" MinWidth="83">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding req}" />
+                            <TextBox Text="{Binding req}" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     
@@ -69,7 +69,7 @@
                 <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True" MinWidth="47">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchange" Text="{Binding VerdictUri.Value}">
+                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeTestCase" Text="{Binding VerdictUri.Value}">
             <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
             <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
             <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
@@ -115,7 +115,7 @@
                 <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchange" Text="{Binding VerdictUri.Value}">
+                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeProcedure" Text="{Binding VerdictUri.Value}">
                                 <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
                                 <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
                                 <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
@@ -139,7 +139,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid x:Name="Steps" HorizontalAlignment="Left" Margin="307,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="170" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" IsEnabled="False" SelectionMode="Single">
+        <DataGrid x:Name="Steps" HorizontalAlignment="Left" Margin="307,424,0,0" VerticalAlignment="Top" RenderTransformOrigin="-13.833,-4.923" Height="170" Width="597" ItemsSource="{Binding procedure}" AutoGenerateColumns="False" CurrentCellChanged="StepChanged" IsEnabled="False" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Number" Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
@@ -176,7 +176,7 @@
                 <DataGridTemplateColumn Header="Verdict" Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchange" Text="{Binding VerdictUri.Value}">
+                            <ComboBox x:Name="procedurebox" DropDownClosed="verdictchangeStep" Text="{Binding VerdictUri.Value}">
                                 <ComboBoxItem Background="#FF399110" Content="Passed" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" VerticalAlignment="Center"/>
                                 <ComboBoxItem Background="#FFBF1616" Content="Failed" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
                                 <ComboBoxItem Background="#FFF1972A" Content="NotExecuted" VerticalAlignment="Center" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
