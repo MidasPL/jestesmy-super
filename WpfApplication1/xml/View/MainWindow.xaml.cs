@@ -84,12 +84,9 @@ namespace xml
                 Steps.IsEnabled = false;
                 Steps.ItemsSource = null;
                 
-            }
-            
-            
-
-          
+            } 
         }
+
        private void verdictchangeTestCase(object sender, EventArgs e)
         {
             ComboBox ff = sender as ComboBox;
@@ -97,7 +94,6 @@ namespace xml
             this.actualItem.URIVerdictOveride.Value = "true";
             InsertComment com = new InsertComment(this.actualItem.URIComment);
             com.Show();
-            
                         
         }
        private void verdictchangeProcedure(object sender, EventArgs e)
