@@ -72,9 +72,10 @@ namespace xml
         {
             xmlTree dd = e.NewValue as xmlTree;
                                
-            this.actualItem = dd;
+            
             if(dd.Req != null)
             {
+                this.actualItem = dd;
                 this.datagridData = new dataTestCase(this.actualItem);
                 this.actualPro = null;
                 ObservableCollection<dataTestCase> hr = new ObservableCollection<dataTestCase>();
@@ -114,6 +115,41 @@ namespace xml
            this.actualStep.VerdictUri.Value = ff.Text;
            InsertComment com = new InsertComment(this.actualItem.URIComment);
            com.Show();
+           foreach (var ele in this.actualPro.steps)
+               {
+                   if (ele.VerdictUri.Value == "Failed")
+                   {
+                       this.actualPro.VerdictUri.Value = "Failed";
+                       break;
+                   }
+                   if (ele.VerdictUri.Value == "NotExecuted")
+                   {
+                       this.actualPro.VerdictUri.Value = "NotExecuted";
+                   }
+
+                   bool tester = true;
+                   bool tester2 = false;
+                   foreach (var elem in this.actualPro.steps)
+                   {
+               
+                       if(elem.VerdictUri.Value!="Passed")
+                       {
+                           tester = false;
+                       }
+                       else
+                       {
+                           tester2 = true;
+                       }
+
+                   }
+                   if (tester == true)
+                   {
+                        this.actualPro.VerdictUri.Value = "Passed";
+                   }
+
+
+               }
+           
        }
       
       
