@@ -14,12 +14,15 @@
             </MenuItem>
         </Menu>
         <TreeView Name="XmlTrees" Margin="0,26,0,23" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" HorizontalAlignment="Left" Width="302" >
-
-            <TreeView.ItemTemplate>
+             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type self:xmlTree}" ItemsSource="{Binding tree, Mode=TwoWay}">
-                    <TextBlock Text="{Binding Title}" />
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <Image Source="order_small.png" Width="24" Height="18" SnapsToDevicePixels="True"/>
+                        <TextBlock Text="{Binding Title}" Focusable="True"/>
+                    </StackPanel>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
+            
 
 
         </TreeView>

@@ -21,6 +21,7 @@ namespace xml.Model
                 xmlTree ThEle = new xmlTree() { Title = file.getThName() };
                 xmlTree FoEle = new xmlTree() { Title = file.getFoName() };
                 xmlTree TestSuite = new xmlTree() { Title = file.getTestSuiteName() };
+
                 foreach(var TestCases in file.getTestCases())
                 {
                     xmlTree TestCase = new xmlTree() { Title = file.getTestCaseName(TestCases), Req = file.getTestCaseReq(TestCases), URIVerdict = file.getURITestCaseVerdict(TestCases), Date = file.getTestCaseDate(TestCases), Tester = file.getTestCaseTester(TestCases), URIComment = file.getURITestCaseComment(TestCases), URIVerdictOveride = file.getURITestCaseOverrideVerdictActive(TestCases), ID = file.getTestCaseID(TestCases) };
