@@ -104,6 +104,36 @@ namespace xml
            this.actualPro.OverUri.Value = "true";
            InsertComment com = new InsertComment(this.actualItem.URIComment);
            com.Show();
+           foreach (var ele in this.actualItem.tree)
+           {
+               if (ele.URIVerdict.Value == "Failed")
+               {
+                   this.actualItem.URIVerdict.Value = "Failed";
+                   break;
+               }
+               if (ele.URIVerdict.Value == "NotExecuted")
+               {
+                   this.actualItem.URIVerdict.Value = "NotExecuted";
+                   break;
+               }
+
+               bool tester = true;
+               foreach (var elem in this.actualItem.tree)
+               {
+
+                   if (ele.URIVerdict.Value != "Passed")
+                   {
+                       tester = false;
+                   }
+               }
+               if (tester == true)
+               {
+                   this.actualItem.URIVerdict.Value = "Passed";
+               }
+
+
+           }
+
        }
        private void verdictchangeStep(object sender, EventArgs e)
        {
@@ -145,6 +175,36 @@ namespace xml
 
 
                }
+           foreach (var ele in this.actualItem.tree)
+           {
+               if (ele.URIVerdict.Value == "Failed")
+               {
+                   this.actualItem.URIVerdict.Value = "Failed";
+                   break;
+               }
+               if (ele.URIVerdict.Value == "NotExecuted")
+               {
+                   this.actualItem.URIVerdict.Value = "NotExecuted";
+                   break;
+               }
+
+               bool tester = true;
+               foreach (var elem in this.actualItem.tree)
+               {
+
+                   if (ele.URIVerdict.Value != "Passed")
+                   {
+                       tester = false;
+                   }
+               }
+               if (tester == true)
+               {
+                   this.actualItem.URIVerdict.Value = "Passed";
+               }
+
+
+           }
+
            
        }
       
