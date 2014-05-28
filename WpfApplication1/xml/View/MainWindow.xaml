@@ -9,9 +9,38 @@
 
         <Menu IsMainMenu="True" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem Header="_File">
-                <MenuItem Click="MenuItem_Click" Header="Open file"/>
-                <MenuItem Click="Save" Header="Save"/>
+                <MenuItem Click="MenuItem_Click" Header="Open XML files"/>
+                <MenuItem Click="Save" Header="Save XML files"/>
+                <MenuItem Click="Save_As_Click" Header="_Save as"/>
+                <MenuItem Header="Options"/>
+                <MenuItem Click="MenuItem_Click_1" Header="Exit"/>
             </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut"/>
+                <MenuItem Header="_Copy"/>
+                <MenuItem Header="_Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Metrics TC">
+                <MenuItem Header="_Count PASSED TC"/>
+                <MenuItem Header="_Count FAILDE TC"/>
+                <MenuItem Header="Count ALL TC"/>
+            </MenuItem>
+            <MenuItem Header="_Metrics REQ">
+                <MenuItem Header="Count PASSED REQ"/>
+                <MenuItem Header="Count FAILED REQ"/>
+                <MenuItem Header="Count ALL REQ"/>
+            </MenuItem>
+            <MenuItem Header="_Generate Report">
+                <MenuItem Header="TC per File"/>
+                <MenuItem Header="REQ per File"/>
+                <MenuItem Header="TC per All Files"/>
+                <MenuItem Header="REQ per All Files"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="User's guide"/>
+                <MenuItem Header="Release Notes"/>
+                <MenuItem Header="About"/>
+            </MenuItem>    
         </Menu>
         <TreeView Name="XmlTrees" Margin="0,26,0,23" Visibility="Visible" FontSize="10" UseLayoutRounding="False" FontFamily="Sylfaen" IsManipulationEnabled="True" SelectedItemChanged="TreeView_SelectedItemChanged" HorizontalAlignment="Left" Width="302" >
              <TreeView.ItemTemplate>
