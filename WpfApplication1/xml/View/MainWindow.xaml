@@ -12,7 +12,7 @@
                 <MenuItem Click="MenuItem_Click" Header="Open XML files"/>
                 <MenuItem Click="Save" Header="Save XML files"/>
                 <MenuItem Click="Save_As_Click" Header="_Save as"/>
-                <MenuItem Header="Options"/>
+                <MenuItem Click="MenuItem_Click_2" Header="Options"/>
                 <MenuItem Click="MenuItem_Click_1" Header="Exit"/>
             </MenuItem>
             <MenuItem Header="_Edit">

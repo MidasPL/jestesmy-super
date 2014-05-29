@@ -70,6 +70,8 @@ namespace xml
 
          private void Save_As_Click(object sender, RoutedEventArgs e)
          {
+             
+             
              Microsoft.Win32.SaveFileDialog okno = new Microsoft.Win32.SaveFileDialog();
              okno.Filter = "XML file|*.xml";
              okno.FileName = "Filename.xml";
@@ -256,9 +258,23 @@ namespace xml
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Czy na pewno chcesz wyłączyć program?", "Sylwia", MessageBoxButton.YesNoCancel);
-            if ( result == MessageBoxResult.Yes)
+            MessageBoxResult result = MessageBox.Show("Czy chcesz zapisać zmiany?", "Zamykanie", MessageBoxButton.YesNoCancel);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (this.lista.XMLfiles != null)
+                {
+                    this.lista.save();
+                }
                 this.Close();
+            }
+            if (result == MessageBoxResult.No)
+                this.Close();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            Options okno = new Options();
+            okno.Show();
         }
 
         
